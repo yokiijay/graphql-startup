@@ -3,5 +3,28 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "yarn run nodemon --exec babel-node index.js --ignore db.json",
+    "build": "yarn run babel . -d build --ignore node_modules --minified",
+    "start": "node build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/runtime": "^7.10.2",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "@koa/router": "^9.0.1",
+    "graphql": "^15.1.0",
+    "graphql-tools": "^6.0.10",
+    "koa": "^2.12.1",
+    "koa-graphql": "^0.8.0",
+    "lowdb": "^1.0.0",
+    "nanoid": "^3.1.10"
+  }
 }
