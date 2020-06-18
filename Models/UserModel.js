@@ -6,14 +6,13 @@ export default class UserModel {
     this.id = nanoid()
     this.name = name
     this.age = age
-    this.create()
   }
 
   async create(){
     const db = await loadDb()
-    // if(db.get('users').find({name: this.name})){
-    //   throw Error('name is already exists')
-    // }
+    if(db.get('users').find({name: this.name})){
+      throw Error('name is already exists')
+    }
     db.get('users').push({
       id: this.id,
       name: this.name,
