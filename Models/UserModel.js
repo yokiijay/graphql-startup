@@ -10,7 +10,7 @@ export default class UserModel {
 
   async create(){
     const db = await loadDb()
-    if(db.get('users').find({name: this.name})){
+    if(db.get('users').find({name: this.name}).value()){
       throw Error('name is already exists')
     }
     db.get('users').push({
@@ -18,5 +18,13 @@ export default class UserModel {
       name: this.name,
       age: this.age
     }).write()
+
+    return this
+  }
+
+  static async get(props){
+    const db = await loadDb()
+    if(!props) return db.get('users').value()
+    return db.get('users').find(props).value()
   }
 }
