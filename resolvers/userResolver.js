@@ -2,9 +2,12 @@ import UserModel from "../Models/UserModel"
 
 export default {
   Query: {
-    allUsers: () => UserModel.get()
+    UserList: () => UserModel.get(),
+    User: (parent, {id})=> UserModel.get({id})
   },
   Mutation: {
-    createUser: (parent, {input: {name, age}})=> new UserModel({name, age}).create()
+    SaveUser: (parent, {input: {name, age}})=> new UserModel({name, age}).create(),
+    DeleteUser: (parent, {id})=> UserModel.delete({id}),
+    UpdateUser: (parent, {id, input})=> UserModel.update({id, input})
   }
 }

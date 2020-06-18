@@ -5,7 +5,7 @@
   "author": "Yokiijay <yokiijay@gmail.com> (https://yokiijay.github.io)",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn run nodemon --exec babel-node index.js --ignore db.json",
+    "dev": "yarn run nodemon --exec babel-node index.js --ignore db.json -e js,json,graphql",
     "build": "yarn run babel . -d build --ignore node_modules --minified",
     "start": "node build"
   },
