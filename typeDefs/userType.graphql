@@ -9,6 +9,11 @@ input UserInput {
   age: Int!
 }
 
+input UserUpdate {
+  name: String
+  age: Int
+}
+
 type Query {
   UserList: [User!]
   User(id: ID!): User
@@ -17,5 +22,5 @@ type Query {
 type Mutation {
   SaveUser(input: UserInput!): User!
   DeleteUser(id: ID!): Boolean!
-  UpdateUser(id: ID!, input: UserInput): User!
+  UpdateUser(id: ID!, input: UserUpdate): User!
 }
