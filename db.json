@@ -20,5 +20,17 @@
       "name": "Zack",
       "age": 22
     }
+  ],
+  "posts": [
+    {
+      "id": "EbhzApWnOtWgKKm2OqYqs",
+      "title": "大标题",
+      "content": "很多内容",
+      "author": {
+        "id": "Zv_VissvSU6vIZ3_e4-6-",
+        "name": "Zack",
+        "age": 22
+      }
+    }
   ]
 }
